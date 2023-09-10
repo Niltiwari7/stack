@@ -1,4 +1,4 @@
-## Implement Stack using array
+## Implement Stack using the array
 ## Code
 ```
 #include <iostream>
@@ -60,7 +60,7 @@ int main() {
     return 0;
 }
 ```
-## Implement Queue using array
+## Implement Queue using the array
 ## Code
 ```
 #include<iostream>
@@ -110,20 +110,46 @@ public:
     int size() {
         return rear - front;
     }
+
+    void print() {
+        for (int i = front + 1; i <= rear; i++) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+    }
 };
 
 int main() {
-    Queue myQueue(5); 
+    Queue q(4);
 
-    myQueue.push(1);
-    myQueue.push(2);
-    myQueue.push(3);
+    // print Queue elements
+    q.print();
 
-    cout << "Front element: " << myQueue.peek() << endl; 
-    cout << "Queue size: " << myQueue.size() << endl; 
+    // inserting elements in the queue
+    q.push(20);
+    q.push(30);
+    q.push(40);
+    q.push(50);
 
-    myQueue.pop();
-    cout << "Front element after pop: " << myQueue.peek() << endl; 
+    // print Queue elements
+    q.print();
+
+    // insert element in the queue
+    q.push(60);
+
+    // print Queue elements
+    q.print();
+
+    q.pop();
+    q.pop();
+
+    cout << "\n\nafter two node deletion\n\n";
+
+    // print Queue elements
+    q.print();
+
+    // print front of the queue
+    cout << "Front of the queue: " << q.peek() << endl;
 
     return 0;
 }
